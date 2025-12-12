@@ -77,6 +77,11 @@ changes to
 With `-ftree-vectorize`, it seems that this trick does wonders and speeds up
 the code even more.
 
+_Update:_ gcc-UBSAN complains about undefined behavior when the above bitshifts
+are used, so the line has now been changed to:
+
+    uint32_t foo = y & 1 ? 0x12345678 : 0
+
 Finally, note that people have done SIMD and CUDA implementations.  If
 you are looking for even more speed, I suggest you check them out.
 
